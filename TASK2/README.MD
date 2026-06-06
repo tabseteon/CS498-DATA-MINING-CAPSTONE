@@ -6,10 +6,10 @@
 ### 2. Embedding Model (BERTopic)
 
 # Task 2.2: Improving Cuisine Maps
-## 1) varying the text representation
+## 1) Varying the text representation - TF-IDF Weighted Sentence Embedding
+### Instead of using a naive mean computation, we dynamically compute a weighted average of all-MiniLM-L6-v2 dense embeddings using token-level global TF-IDF scores
 
-## 2) Varying the similarity function
-
+## 2) Varying the similarity function - Min-Max Scaling
 
 # Task 2.3: Incorporating Clustering Cuisine Maps
 ## Implemented Models
