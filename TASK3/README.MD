@@ -3,9 +3,9 @@
 
 # Task 3.1: Manual Tagging
 ## your task here is to refine the label list for one cuisine.
-### Remove a false positive non-dish name phrase (recommended)
-### Change a false positive non-dish name phrase to a negative label
-### Remove a false negative dish name phrase
-### Change a false negative dish name phrase to a positive label (recommended)
+### 1 Remove a false positive non-dish name phrase (recommended)
+### 2 Change a false positive non-dish name phrase to a negative label
+### 3 Remove a false negative dish name phrase
+### 4 Change a false negative dish name phrase to a positive label (recommended)
 
 # Task 3.2: Mining Additional Dish Names
