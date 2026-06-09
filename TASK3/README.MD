@@ -21,6 +21,7 @@
 #### Phrases unique to one business (a signature dish) may appear in KeyBERT results but not in n-gram candidates because their global count is below MIN_DF.
 
 # Task 3.2: Mining Additional Dish Names
+# Task 3.2 — Manual seed lists and curation setup
 
 
 
