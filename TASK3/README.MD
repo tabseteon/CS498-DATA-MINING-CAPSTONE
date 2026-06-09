@@ -9,7 +9,6 @@
 ### 3 Remove a false negative dish name phrase
 ### 4 Change a false negative dish name phrase to a positive label (recommended)
 
-# Task 3.2: Mining Additional Dish Names
 ## N-gram threshold
 #### A transparent lexical method that counts how often contiguous word sequences (for example, unigrams, bigrams, and trigrams) appear in review text.
 ## Modern candidate generation: KeyBERT
@@ -20,3 +19,8 @@
 #### N-gram threshold surfaces high-frequency, corpus-wide patterns. A dish that appears 200 times scores high regardless of document context.
 #### KeyBERT surfaces document-representative phrases. A signature dish that characterizes specific restaurants may appear even if its corpus-level frequency is too low for the n-gram threshold.
 #### Phrases unique to one business (a signature dish) may appear in KeyBERT results but not in n-gram candidates because their global count is below MIN_DF.
+
+# Task 3.2: Mining Additional Dish Names
+
+
+
