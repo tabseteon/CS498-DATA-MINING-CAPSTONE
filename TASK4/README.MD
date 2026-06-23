@@ -9,9 +9,8 @@
 #### Assumption: Sentiment is detectable from positive and negative word counts in the local context around the dish mention. 
 #### Lexicon sentiment scores the sentence/window around the dish mention using positive and negative word lists. This is still simple and interpretable, but it can distinguish cases where the review rating is high while the dish sentence is negative, or vice versa.
 #### In Task 4, lexicon sentiment is applied to dish-local evidence windows rather than entire reviews, so students can ask whether the specific sentence around a dish sounds favorable or unfavorable. This creates a more targeted ranking signal than overall review stars while remaining interpretable.
+#### Lexicon sentiment is useful because students can inspect why a sentence received a score. It also has predictable weaknesses: sarcasm, negation, domain-specific food language, and short context windows can mislead dictionary-based scoring.
 ### VADER/TextBlob Lexicon Sentiment
-
-Lexicon sentiment is useful because students can inspect why a sentence received a score. It also has predictable weaknesses: sarcasm, negation, domain-specific food language, and short context windows can mislead dictionary-based scoring.
 
 ## Method C — Transformer sentiment (RoBERTa)
 #### Assumption: Sentiment is detectable from positive and negative word counts in the local context around the dish mention. 
