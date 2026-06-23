@@ -1,10 +1,9 @@
-# TASK4
-### The goal of this task is to mine the data set to discover the common/popular dishes of a particular cuisine. For this task, we would like to identify the dishes that are available for a cuisine by building a dish recognizer.
-### The curated dish list you produce here (final_dish_list.csv) is the direct input to Task 4 (Restaurant Ranking). Task 4 uses your dish vocabulary to find mentions in reviews, extract local sentiment evidence, and rank restaurants for specific dishes. The quality of Task 4's rankings depends entirely on the quality of Task 3's curation.
-
-# Task 3.1: Mining Dish Names
+# TASK4 : Dish-Specific Restaurant Ranking
+### In this task, we will use the curated dish list from Task 3 to rank restaurants for specific dishes within a cuisine. The goal is not simply to find highly rated restaurants overall, but to identify restaurants with strong dish-specific evidence in review text.
 
 ## N-gram threshold
 #### A transparent lexical method that counts how often contiguous word sequences (for example, unigrams, bigrams, and trigrams) appear in review text.
-## Modern candidate generation: KeyBERT
-#### Extract keyphrases from documents using sentence embeddings.
+## Method C — Transformer sentiment (RoBERTa)
+#### Assumption: Sentiment is detectable from positive and negative word counts in the local context around the dish mention. 
+#### We use cardiffnlp/twitter-roberta-base-sentiment as the default transformer sentiment model. This RoBERTa model was fine-tuned on 58 M tweets, making it a reasonable match for Yelp review language: short, informal, opinionated sentences with food and experience vocabulary.
+#### The model outputs three classes: LABEL_0 (negative), LABEL_1 (neutral), LABEL_2 (positive). We map maps these to the −1 … +1 scale used by the other methods.
