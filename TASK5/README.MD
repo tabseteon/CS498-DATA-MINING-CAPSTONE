@@ -10,3 +10,7 @@
 ##### Both caps must be consistent. If you raise MAX_BUSINESSES to 200 but keep MAX_REVIEWS_TOTAL at 10,000, each business gets roughly 50 reviews on average which is not enough for per-business trends.
 #### MAX_DISHES: 4
 ##### Tracking too many dishes at once makes the heatmaps unreadable and the analysis unfocused. Twelve dishes is a reasonable upper bound. We will probably focus on three to five.
+
+## Construct the temporal review subset
+#### We join reviews to business metadata, parse dates, assign time bins, and drop under-supported time bins.
+#### The minimum time-bin threshold is important: a visual trend based on a tiny number of reviews is usually not reliable.
