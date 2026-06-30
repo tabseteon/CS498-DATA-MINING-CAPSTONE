@@ -14,3 +14,10 @@
 ## Construct the temporal review subset
 #### We join reviews to business metadata, parse dates, assign time bins, and drop under-supported time bins.
 #### The minimum time-bin threshold is important: a visual trend based on a tiny number of reviews is usually not reliable.
+
+## Method A: Temporal TF-IDF Shift Analysis
+#### This method compares which terms are distinctive in different time bins. We aggregate review text by period, vectorize each period, and inspect changing top terms or heatmaps to understand how review language evolves. This is a classical text-mining method measuring changes in individual term frequencies.
+
+## Method B: Temporal Embedding Drift Analysis
+#### Embedding-centroid drift measures shifts in overall meaning: a large centroid distance between two bins suggests the topics, tone, and vocabulary changed substantially.
+#### We encode each time-bin's reviews into a centroid embedding (using sentence-transformers or a TF-IDF + SVD fallback), then measure cosine distance between consecutive bin centroids.
