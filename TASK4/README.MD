@@ -12,7 +12,7 @@
 #### Lexicon sentiment is useful because students can inspect why a sentence received a score. It also has predictable weaknesses: sarcasm, negation, domain-specific food language, and short context windows can mislead dictionary-based scoring.
 ### VADER/TextBlob Lexicon Sentiment
 
-## Method C — Transformer sentiment (RoBERTa)
+## Method C: Transformer sentiment (RoBERTa)
 #### Assumption: Sentiment is detectable from positive and negative word counts in the local context around the dish mention. 
 #### We use cardiffnlp/twitter-roberta-base-sentiment as the default transformer sentiment model. This RoBERTa model was fine-tuned on 58 M tweets, making it a reasonable match for Yelp review language: short, informal, opinionated sentences with food and experience vocabulary.
 #### The model outputs three classes: LABEL_0 (negative), LABEL_1 (neutral), LABEL_2 (positive). We map maps these to the −1 … +1 scale used by the other methods.
