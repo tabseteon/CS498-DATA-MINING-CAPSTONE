@@ -19,5 +19,4 @@
 #### This method compares which terms are distinctive in different time bins. We aggregate review text by period, vectorize each period, and inspect changing top terms or heatmaps to understand how review language evolves. This is a classical text-mining method measuring changes in individual term frequencies.
 
 ## Method B: Temporal Embedding Drift Analysis
-#### Embedding-centroid drift measures shifts in overall meaning: a large centroid distance between two bins suggests the topics, tone, and vocabulary changed substantially.
-#### We encode each time-bin's reviews into a centroid embedding (using sentence-transformers or a TF-IDF + SVD fallback), then measure cosine distance between consecutive bin centroids.
+#### Embedding-centroid drift measures shifts in overall meaning: a large centroid distance between two bins suggests the topics, tone, and vocabulary changed substantially. We encode each time-bin's reviews into a centroid embedding (using sentence-transformers or a TF-IDF + SVD fallback), then measure cosine distance between consecutive bin centroids.
