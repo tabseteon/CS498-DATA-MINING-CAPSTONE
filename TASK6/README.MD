@@ -15,6 +15,12 @@
 #### MIN_CLASS_RATE = 10% : The minority class must be at least 10% of the data
 #### MIN_EXAMPLES_PER_CV_FOLD = 5 : Each fold must have at least 5 examples per class
 
+## Build the Future Quality-Decline Prediction Frame
+#### Convert Yelp reviews into a supervised learning problem
+#### 1. Split reviews by cutoff date → historical window (features) vs future window (labels)
+#### 2. Aggregate by business → historical average stars, historical review counts, historical sentiment, and historical text
+#### 3. Compute labels → risk=1 if future quality declines enough and the future average is low enough
+
 ## 1. The Baseline
 ## 2. Text-Only Classifier
 ## 3. Text + Metadata Model
