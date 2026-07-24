@@ -21,11 +21,20 @@
 #### 2. Aggregate by business → historical average stars, historical review counts, historical sentiment, and historical text
 #### 3. Compute labels → risk=1 if future quality declines enough and the future average is low enough
 
-## 1. The Baseline
-## 2. Text-Only Classifier
-## 3. Text + Metadata Model
-## 4. Advanced Representation
-## 5. Evaluation Framework 
-## 6. Leakage Audit
 
-#### 
+## Feature Groups and Models
+#### Five feature/model configurations were evaluated with stratified 3-fold cross-validation, all using logistic regression as the classifier so that differences in score reflect the feature representation
+## 1. Dummy Baseline: Most-frequent-class predictor.
+## 2. M1: Metadata only. (Historical review count, historical average stars, historical lexicon-based sentiment, and historical low-star share)
+## 3. M2: TF-IDF only. (TF-IDF vectorized historical review text, no structured features)
+## 4. M3 – TF-IDF + metadata. (TF-IDF text combined with the M1 structured features via a ColumnTransformer)
+## 5. M4 – LSA + metadata (TF-IDF text compressed with Truncated SVD (latent semantic analysis) and combined with the M1 structured features)
+## 6. ST_Logistic Model: Historical review text was also encoded with a pretrained sentence-transformer (all-MiniLM-L6-v2) and fed into logistic regression (ST_Logistic), to test whether dense semantic embeddings outperform sparse TF-IDF for this task.
+####  Comparing M3 (sparse TF-IDF) and M4 (compressed LSA) under the same leakage-safe framework reveals whether dimensionality reduction helps or hurts for this prediction task
+
+#### Logistic regression: A linear supervised classifier, providing an interpretable baseline for predicting future restaurant risk from historical text and metadata
+
+## Three technical responses to class imbalance
+#### Macro-F1
+#### Stratified K-fold cross-validation: Split labeled examples into folds while preserving class proportions as much as possible. This is crucial because risk/pass labels can be imbalanced and the labeled sample is small.
+#### Class weighting in model training: Most sklearn classifiers support class_weight="balanced", up-weighting the loss for minority-class errors during training.
